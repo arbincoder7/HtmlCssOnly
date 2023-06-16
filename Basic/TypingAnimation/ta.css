@@ -1,0 +1,71 @@
+body{
+    margin: 0;
+    padding: 0;
+    background-color: #2f3542;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: sans-serif;
+}
+
+.animatedtext{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.animatedtext span{
+    position: relative;
+}
+
+.animatedtext span::before{
+    content: "Programmer";
+    color: #ff7f50;
+    animation: words 20s infinite;
+}
+
+.animatedtext span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    background-color: #2f3542;
+    border-left: 2px solid #ff7f50;
+    right: -8px;
+    animation: cursor .8s infinite, typing 20s steps(14) infinite;
+}
+
+@keyframes cursor {
+    to{
+        border-left: 2px solid #ff755000;
+    }
+}
+
+@keyframes words {
+    0%,20%{
+        content: "Programmer";
+    }
+    21%,40%{
+        content: "Coder";
+    }
+    41%,60%{
+        content: "Freelancer";
+    }
+    61%,80%{
+        content: "Learner";
+    }
+    81%,100%{
+        content: "Gamer";
+    }
+}
+
+@keyframes typing {
+    10%,15%,30%,35%,50%,55%,70%,75%,90%,95%{
+        width: 0;
+    }
+    5%,20%,25%,40%,45%,60%,65%,80%,85%{
+        width: calc(100% + 8px);
+    }
+}
